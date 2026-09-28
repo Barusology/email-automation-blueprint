@@ -4,13 +4,18 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Email Automation Blueprint — Build a $5,000/Month Retainer Service</title>
+<meta name="description" content="A practical, step-by-step email automation blueprint with starter projects, client acquisition workflows, and editable templates.">
+<link rel="canonical" href="https://emailpro.website/">
+<meta property="og:title" content="The Email Automation Blueprint">
+<meta property="og:description" content="Build practical email automation systems with a step-by-step guide, starter projects, and editable templates.">
+<meta property="og:url" content="https://emailpro.website/">
+<meta property="og:type" content="website">
 <!--
   BEFORE PUBLISHING — replace these placeholders:
   1. The purchase buttons point to the Creem checkout page below.
   2. The price block in #offer — set your real price.
-  3. The "What buyers are saying" section — swap in real customer testimonials once you have them.
-     It currently ships EMPTY (template slots only) — do not invent fake quotes/names, that's deceptive.
-  4. The guarantee terms — confirm the refund window you're actually willing to honor.
+  3. Testimonials are collected through the form and only published with permission.
+  4. Confirm the guarantee terms match the refund policy you honor.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -258,12 +263,25 @@
 
   /* testimonial slots (EMPTY template) */
   .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:40px;}
-  .testi-slot{
-    border:1.5px dashed #cfc7ac;border-radius:10px;padding:24px 20px;
-    color:#9a927a;font-size:0.86rem;text-align:center;min-height:150px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  .testimonial-form{
+    margin-top:32px;padding:28px;background:#fff;border:1px solid var(--paper-line);
+    border-radius:12px;max-width:760px;
   }
-  .testi-slot .icon{font-size:1.3rem;opacity:.6;}
+  .testimonial-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .testimonial-form label{display:grid;gap:7px;font-weight:600;font-size:0.9rem;color:var(--ink);}
+  .testimonial-form input,.testimonial-form textarea{
+    width:100%;padding:12px;border:1px solid #b9c2c8;border-radius:6px;
+    font:inherit;color:var(--ink);background:#fff;
+  }
+  .testimonial-form textarea{min-height:140px;resize:vertical;}
+  .testimonial-form .permission{display:flex;align-items:flex-start;gap:10px;margin:18px 0;color:var(--ink-soft);font-size:0.88rem;}
+  .testimonial-form .permission input{width:auto;margin-top:5px;flex:none;}
+  .testimonial-form button{
+    border:0;cursor:pointer;background:var(--blue-deep);color:#fff;padding:13px 20px;
+    border-radius:7px;font:600 0.95rem 'IBM Plex Sans',sans-serif;
+  }
+  .testimonial-form button:hover{background:var(--blue-darker);}
+  .form-note{font-size:0.82rem;color:var(--ink-soft);margin:12px 0 0;}
 
   /* offer / pricing */
   .offer-panel{
@@ -316,6 +334,11 @@
 
   footer{background:var(--blue-darker);color:#7C9AA3;padding:34px 0;font-size:0.82rem;}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer nav{
+    position:static;display:flex;align-items:center;gap:18px;background:transparent;
+    border:0;backdrop-filter:none;
+  }
+  footer nav a{color:#EAF6F8;}
 
   @media (max-width: 760px){
     .offer-grid{grid-template-columns:1fr;}
@@ -328,6 +351,8 @@
     nav .wrap{height:auto;padding:12px 20px;}
     .logo{font-size:0.92rem;}
     .navbtn{padding:8px 14px;font-size:0.8rem;}
+    .testimonial-form .form-grid{grid-template-columns:1fr;}
+    .testimonial-form{padding:20px;}
   }
   @media (max-width: 420px){
     .logo-text{display:none;}
@@ -514,18 +539,38 @@
   </div>
 </section>
 
-<!-- ===================== TESTIMONIALS (template slots) ===================== -->
+<!-- ===================== TESTIMONIAL SUBMISSION ===================== -->
 <section class="paper section tight">
   <div class="wrap">
-    <div class="kicker">FROM PEOPLE USING THE BLUEPRINT</div>
-    <h2 class="section-title">Add your own results here</h2>
-    <p class="lede">Swap these four slots for real feedback once buyers start sending it in — screenshots, quotes, or before/after numbers all work well here.</p>
-    <div class="testi-grid">
-      <div class="testi-slot"><div class="icon">＋</div>Testimonial slot 1<br>[Name, result]</div>
-      <div class="testi-slot"><div class="icon">＋</div>Testimonial slot 2<br>[Name, result]</div>
-      <div class="testi-slot"><div class="icon">＋</div>Testimonial slot 3<br>[Name, result]</div>
-      <div class="testi-slot"><div class="icon">＋</div>Testimonial slot 4<br>[Name, result]</div>
-    </div>
+    <div class="kicker">SHARE YOUR EXPERIENCE</div>
+    <h2 class="section-title">Have you used the Blueprint?</h2>
+    <p class="lede">Tell us what you found useful. Feedback is optional, and we will only publish your words and chosen display name if you give permission below.</p>
+    <form class="testimonial-form" id="testimonial-form">
+      <div class="form-grid">
+        <label>
+          Your name
+          <input type="text" name="name" autocomplete="name" maxlength="100" required>
+        </label>
+        <label>
+          Email address (for follow-up only)
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+      </div>
+      <label style="margin-top:18px;">
+        Name to display with your feedback
+        <input type="text" name="display_name" maxlength="100" required>
+      </label>
+      <label style="margin-top:18px;">
+        Your honest feedback
+        <textarea name="testimonial" maxlength="2000" required></textarea>
+      </label>
+      <label class="permission">
+        <input type="checkbox" name="permission_to_publish" value="yes" required>
+        <span>I confirm this reflects my genuine experience and give Barusology permission to publish this feedback with the display name above. I can request removal by emailing <a href="mailto:barusology@gmail.com">barusology@gmail.com</a>.</span>
+      </label>
+      <button type="submit">Send feedback by email</button>
+      <p class="form-note">Submitting opens your email app with your feedback prepared. Nothing is sent until you choose to send that email. Read our <a href="privacy.html">Privacy Policy</a>. If no email app opens, write to <a href="mailto:barusology@gmail.com">barusology@gmail.com</a>.</p>
+    </form>
   </div>
 </section>
 
@@ -612,10 +657,31 @@
   <div class="wrap">
     <span>© 2026 The Email Automation Blueprint. All rights reserved.</span>
     <span>Educational product — results depend on your own effort and market.</span>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:barusology@gmail.com">Support: barusology@gmail.com</a>
+    </nav>
   </div>
 </footer>
 
 <script>
+  document.querySelector('#testimonial-form').addEventListener('submit', event=>{
+    event.preventDefault();
+    const form = event.currentTarget;
+    if(!form.reportValidity()) return;
+    const fields = new FormData(form);
+    const body = [
+      `Name: ${fields.get('name')}`,
+      `Email: ${fields.get('email')}`,
+      `Display name: ${fields.get('display_name')}`,
+      `Feedback: ${fields.get('testimonial')}`,
+      `Permission to publish: ${fields.get('permission_to_publish') === 'yes' ? 'Yes' : 'No'}`
+    ].join('\n\n');
+    const subject = encodeURIComponent('Email Automation Blueprint feedback');
+    window.location.href = `mailto:barusology@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+  });
+
   document.querySelectorAll('.faq-q').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const item = btn.closest('.faq-item');
