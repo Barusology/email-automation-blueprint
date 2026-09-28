@@ -33,7 +33,8 @@ If the Creem product URL, price, guarantee, or fulfillment terms change, update 
 .
 ├── index.html    # Complete static sales page
 ├── privacy.html  # Public privacy policy
-└── terms.html    # Public terms of service
+├── terms.html    # Public terms of service
+└── favicon.svg   # Email icon shown in browser tabs
 ```
 
 ## Preview locally
