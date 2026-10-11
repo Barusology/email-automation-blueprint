@@ -13,7 +13,7 @@ The offer currently presented on the page includes:
 - Four hands-on starter projects
 - Client-acquisition workflows and outreach templates
 - Pricing worksheets and audit checklists
-- A one-time purchase price of **$30**
+- A one-time purchase price of **$5**
 - A 30-day money-back guarantee
 - Customer support at barusology@gmail.com
 
