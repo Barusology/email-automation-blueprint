@@ -1,8 +1,8 @@
 # Email Automation Blueprint Sales Page
 
-This repository contains the production sales page for **The Email Automation Blueprint**, a practical digital guide for building email automation systems and selling them as a recurring service.
+This repository contains the public website for **The Email Automation Blueprint**, including a free practical email automation guide and a page for the related paid digital product.
 
-The storefront is a small static site with no backend or build step. The sales page contains its responsive layout, styles, FAQ interactions, sales copy, pricing presentation, testimonial feedback form, and Creem checkout links. The Privacy Policy and Terms of Service are published as separate pages.
+The site is static, with no backend or build step. It includes educational content, product information, a Privacy Policy, Terms of Service, and Creem checkout links.
 
 ## Product
 
@@ -17,8 +17,6 @@ The offer currently presented on the page includes:
 - A 30-day money-back guarantee
 - Customer support at barusology@gmail.com
 
-The feedback form prepares an email to the support address in the visitor's email application. It does not submit to or store data on a website server.
-
 ## Checkout
 
 All purchase calls to action link to the Creem product checkout:
@@ -31,10 +29,13 @@ If the Creem product URL, price, guarantee, or fulfillment terms change, update 
 
 ```text
 .
-├── index.html    # Complete static sales page
-├── privacy.html  # Public privacy policy
-├── terms.html    # Public terms of service
-└── favicon.svg   # Email icon shown in browser tabs
+├── index.html                         # Product information and links to free resources
+├── welcome-email-automation-guide.html # Free educational guide; AdSense Auto ads are loaded here
+├── privacy.html                       # Privacy, analytics, and advertising disclosures
+├── terms.html                         # Public terms of service
+├── robots.txt                         # Crawler instructions and sitemap location
+├── sitemap.xml                        # Public pages for search discovery
+└── favicon.svg                        # Email icon shown in browser tabs
 ```
 
 ## Preview locally
@@ -69,7 +70,7 @@ Deploy the repository as a static site using any provider that supports a root `
 
 The site does not require a build step, server runtime, database, or environment variables.
 
-The production storefront domain is [emailpro.website](https://emailpro.website/). The sales page and its policy pages use this domain as their canonical URL.
+The production site domain is [emailpro.website](https://emailpro.website/). The site pages use this domain as their canonical URL.
 
 For GitHub Pages, configure the repository's Pages settings to deploy from the `main` branch and the repository root.
 
@@ -79,29 +80,30 @@ The production custom domain is `emailpro.website`; keep the Vercel project conf
 
 ## Editing guidelines
 
-When updating the page:
+When updating the site:
 
 1. Keep the Creem checkout URL consistent across every purchase button.
 2. Keep visible pricing synchronized with the actual Creem product price.
-3. Publish customer feedback only after receiving it and obtaining explicit permission.
-4. Keep the Privacy Policy, Terms of Service, and support email links working.
-5. Confirm the guarantee, refund, and fulfillment language matches the policy you honor.
-6. Test the page on mobile and desktop widths.
+3. Keep educational pages useful, original, accurate, and maintained; do not add filler or unsupported statistics.
+4. Keep the Privacy Policy, Terms of Service, and support email links working and aligned with actual data practices.
+5. Confirm the guarantee, refund, product, and fulfillment language matches what you actually provide.
+6. Test each page on mobile and desktop widths.
 7. Verify every checkout button after publishing.
 8. Verify the production custom domain and HTTPS after domain configuration.
-9. Review the policy pages against your actual business practices and applicable legal requirements before relying on them as legal advice.
+9. Configure an appropriate certified consent management platform for regions where Google requires it before serving ads there.
+10. Review the policy pages against actual business practices and applicable legal requirements before relying on them as legal advice.
 
 ## Quality checklist
 
 Before publishing a change:
 
-- Open `index.html` in a browser.
+- Open the sales page and free guide in a browser.
 - Test the navigation CTA, hero CTA, offer CTA, and final CTA.
 - Confirm the buttons open the Creem checkout page.
-- Check the FAQ expand/collapse behavior.
+- Check the FAQ expand/collapse behavior on the sales page.
 - Test responsive layout on a narrow viewport.
 - Confirm the displayed price matches the live product.
-- Check the Privacy Policy, Terms of Service, and support email links.
+- Check the free guide, Privacy Policy, Terms of Service, and support email links.
 - Check links and copy for outdated claims or placeholders.
 
 ## License and content ownership

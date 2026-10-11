@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Email Automation Blueprint — Build a $5,000/Month Retainer Service</title>
-<meta name="description" content="A practical, step-by-step email automation blueprint with starter projects, client acquisition workflows, and editable templates.">
+<title>The Email Automation Blueprint | Practical Email Automation Guide</title>
+<meta name="description" content="Learn how to plan, build, and test a permission-based welcome email automation with a free step-by-step guide and practical examples.">
 <meta name="google-adsense-account" content="ca-pub-5817549134036094">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5817549134036094" crossorigin="anonymous"></script>
 <link rel="canonical" href="https://emailpro.website/">
-<meta property="og:title" content="The Email Automation Blueprint">
-<meta property="og:description" content="Build practical email automation systems with a step-by-step guide, starter projects, and editable templates.">
+<meta property="og:title" content="The Email Automation Blueprint | Practical Email Automation Guide">
+<meta property="og:description" content="Learn how to plan, build, and test a permission-based welcome email automation with a free step-by-step guide and practical examples.">
 <meta property="og:url" content="https://emailpro.website/">
 <meta property="og:type" content="website">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YG9RNCLN"></script>
@@ -22,13 +21,6 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0B2A4A">
-<!--
-  BEFORE PUBLISHING — replace these placeholders:
-  1. The purchase buttons point to the Creem checkout page below.
-  2. The price block in #offer — set your real price.
-  3. Testimonials are collected through the form and only published with permission.
-  4. Confirm the guarantee terms match the refund policy you honor.
--->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -273,28 +265,6 @@
   .split-card ul{margin:0;padding-left:20px;}
   .split-card li{margin-bottom:9px;font-size:0.94rem;color:var(--ink-soft);}
 
-  /* testimonial slots (EMPTY template) */
-  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:40px;}
-  .testimonial-form{
-    margin-top:32px;padding:28px;background:#fff;border:1px solid var(--paper-line);
-    border-radius:12px;max-width:760px;
-  }
-  .testimonial-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  .testimonial-form label{display:grid;gap:7px;font-weight:600;font-size:0.9rem;color:var(--ink);}
-  .testimonial-form input,.testimonial-form textarea{
-    width:100%;padding:12px;border:1px solid #b9c2c8;border-radius:6px;
-    font:inherit;color:var(--ink);background:#fff;
-  }
-  .testimonial-form textarea{min-height:140px;resize:vertical;}
-  .testimonial-form .permission{display:flex;align-items:flex-start;gap:10px;margin:18px 0;color:var(--ink-soft);font-size:0.88rem;}
-  .testimonial-form .permission input{width:auto;margin-top:5px;flex:none;}
-  .testimonial-form button{
-    border:0;cursor:pointer;background:var(--blue-deep);color:#fff;padding:13px 20px;
-    border-radius:7px;font:600 0.95rem 'IBM Plex Sans',sans-serif;
-  }
-  .testimonial-form button:hover{background:var(--blue-darker);}
-  .form-note{font-size:0.82rem;color:var(--ink-soft);margin:12px 0 0;}
-
   /* offer / pricing */
   .offer-panel{
     background:var(--blue-deep);color:#EAF6F8;border-radius:16px;
@@ -347,10 +317,10 @@
   footer{background:var(--blue-darker);color:#7C9AA3;padding:34px 0;font-size:0.82rem;}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   footer nav{
-    position:static;display:flex;align-items:center;gap:18px;background:transparent;
+    position:static;display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;background:transparent;
     border:0;backdrop-filter:none;
   }
-  footer nav a{color:#EAF6F8;}
+  footer nav a{color:#EAF6F8;overflow-wrap:anywhere;}
 
   @media (max-width: 760px){
     .offer-grid{grid-template-columns:1fr;}
@@ -360,11 +330,11 @@
     .flow{flex-direction:column;align-items:stretch;}
     .flow-arrow{transform:rotate(90deg);padding:2px 0;}
     .schematic{display:none;}
-    nav .wrap{height:auto;padding:12px 20px;}
+    nav .wrap{height:auto;padding:12px 20px;flex-wrap:wrap;gap:10px;}
     .logo{font-size:0.92rem;}
     .navbtn{padding:8px 14px;font-size:0.8rem;}
-    .testimonial-form .form-grid{grid-template-columns:1fr;}
-    .testimonial-form{padding:20px;}
+    .sheet-label{flex-wrap:wrap;gap:8px 16px;}
+    .eyebrow{display:flex;width:fit-content;max-width:100%;white-space:normal;}
   }
   @media (max-width: 420px){
     .logo-text{display:none;}
@@ -373,13 +343,15 @@
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="wrap">
     <div class="logo"><span class="mark">✉</span><span class="logo-text">The Email Automation Blueprint</span></div>
+    <a href="welcome-email-automation-guide.html" class="btn-ghost">Free guide</a>
     <a href="https://www.creem.io/payment/prod_7KMOwGsqSYcldoZPmJBjJ8" class="navbtn">Get the Blueprint →</a>
   </div>
 </nav>
 
+<main>
 <!-- ===================== HERO ===================== -->
 <header class="blueprint hero">
   <div class="tickmarks"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
@@ -389,15 +361,15 @@
       <span>SCALE 1:1 — REV 2026</span>
     </div>
 
-    <div class="eyebrow">STEP-BY-STEP IMPLEMENTATION &amp; MONETIZATION GUIDE</div>
-    <h1>Build the exact email system businesses pay <em>$5,000 a month</em> to keep running.</h1>
-    <p class="sub">A 32-page blueprint that walks you from zero to a live automation account, a working welcome sequence, and your first outreach email to a paying client — one screen, one click, one checkbox at a time.</p>
+    <div class="eyebrow">PRACTICAL EMAIL AUTOMATION &amp; CLIENT-SERVICE GUIDE</div>
+    <h1>Plan and build <em>useful email automations</em> one clear step at a time.</h1>
+    <p class="sub">Start with a free, practical walkthrough of a permission-based welcome sequence. Explore the paid Blueprint for additional guided projects, editable templates, and client-service workflows.</p>
 
     <div class="cta-row">
-      <a href="https://www.creem.io/payment/prod_7KMOwGsqSYcldoZPmJBjJ8" class="btn-primary">Get the Blueprint — Instant Download</a>
-      <a href="#inside" class="btn-ghost">See what's inside ↓</a>
+      <a href="welcome-email-automation-guide.html" class="btn-primary">Read the free implementation guide</a>
+      <a href="#inside" class="btn-ghost">Explore the paid Blueprint ↓</a>
     </div>
-    <div class="microcopy">Digital PDF + editable Word file · No experience required · Works with Mailchimp, Kit, ActiveCampaign, Brevo, Klaviyo &amp; HubSpot</div>
+    <div class="microcopy">Platform-independent guidance · Permission-based list practices · No revenue or outcome guarantees</div>
 
     <div class="schematic">
       <svg viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
@@ -424,12 +396,12 @@
         <g class="node-fade nf4">
           <rect x="690" y="95" width="120" height="70" rx="8" fill="none" stroke="#3FAE84" stroke-width="1.4"/>
           <text x="750" y="122" fill="#3FAE84" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">RESULT</text>
-          <text x="750" y="142" fill="#EAF6F8" font-family="Space Grotesk" font-weight="600" font-size="12" text-anchor="middle">Client Retained</text>
+          <text x="750" y="142" fill="#EAF6F8" font-family="Space Grotesk" font-weight="600" font-size="12" text-anchor="middle">Useful Follow-up</text>
         </g>
         <g class="node-fade nf4">
           <rect x="900" y="100" width="90" height="60" rx="8" fill="#E8A94A" opacity="0.12" stroke="#E8A94A" stroke-width="1.2"/>
-          <text x="945" y="126" fill="#E8A94A" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">$5,000</text>
-          <text x="945" y="144" fill="#E8A94A" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">/MONTH</text>
+          <text x="945" y="126" fill="#E8A94A" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">CLEAR</text>
+          <text x="945" y="144" fill="#E8A94A" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">NEXT STEP</text>
         </g>
       </svg>
       <div class="schem-caption mono">FIG. 1 — THE SAME TRIGGER → EMAIL → WAIT → RESULT LOGIC BEHIND EVERY WORKFLOW IN THE GUIDE</div>
@@ -440,15 +412,16 @@
 <!-- ===================== AGITATE / PROBLEM ===================== -->
 <section class="paper section" id="problem">
   <div class="wrap">
-    <div class="kicker">THE PROBLEM</div>
-    <h2 class="section-title">Every business you know is quietly leaking customers — and nobody on their team has time to fix it.</h2>
-    <p class="lede">Small businesses lose a third to half of their leads simply because nobody follows up in time. They know it. They just don't have the hours, or the technical know-how, to build the system that stops it — which is exactly the gap this guide teaches you to fill.</p>
+    <div class="kicker">A PRACTICAL STARTING POINT</div>
+    <h2 class="section-title">A welcome sequence should answer the subscriber's request before it tries to sell.</h2>
+    <p class="lede">Start with a clear opt-in, deliver what was promised, and make each follow-up useful and easy to stop. This simple structure works across email platforms; the exact settings and legal requirements depend on your tools and audience.</p>
 
     <div class="stats">
-      <div class="stat"><div class="num">30–50%</div><div class="lbl">of leads lost to slow or missing follow-up</div></div>
-      <div class="stat"><div class="num">3</div><div class="lbl">core automations most small businesses have never built</div></div>
-      <div class="stat"><div class="num">$5,000</div><div class="lbl">monthly retainer this guide shows you how to package and sell</div></div>
+      <div class="stat"><div class="num">01</div><div class="lbl">Confirm what the person asked to receive and record the source of the opt-in.</div></div>
+      <div class="stat"><div class="num">02</div><div class="lbl">Deliver the promised resource with a recognizable sender and a clear next step.</div></div>
+      <div class="stat"><div class="num">03</div><div class="lbl">Measure delivery, engagement, and unsubscribes, then improve one thing at a time.</div></div>
     </div>
+    <p class="microcopy" style="margin-top:18px;color:var(--ink-soft);">Want the complete setup checklist and a sample sequence? <a href="welcome-email-automation-guide.html">Read the free welcome email automation guide</a>.</p>
   </div>
 </section>
 
@@ -460,7 +433,7 @@
       <span style="width:26px;height:1.5px;background:var(--gold);display:inline-block;"></span>
       WHAT'S INSIDE
     </div>
-    <h2 class="section-title" style="color:#fff;">Four hands-on projects. Then a repeatable business built on top of them.</h2>
+    <h2 class="section-title" style="color:#fff;">Four hands-on projects for learning the building blocks of email automation.</h2>
     <p class="lede" style="color:#C9DEE3;">Every project follows the same format as the rest of the guide — objective, do-this steps, screenshots, checkpoint, common problems, deliverable — so you always know exactly where you are.</p>
 
     <div class="cards">
@@ -485,17 +458,17 @@
       <div class="card">
         <div class="tag">PROJECT 4</div>
         <h3>Recover Lost Sales</h3>
-        <p>Cart recovery, browse abandonment, and discount follow-ups — the automations clients notice fastest.</p>
-        <div class="time">★★★ REVENUE</div>
+        <p>Explore cart and browse follow-ups, with attention to platform support, subscriber expectations, and suppression rules.</p>
+        <div class="time">★★★ E-COMMERCE</div>
       </div>
     </div>
 
     <div class="flow">
-      <div class="flow-step"><div class="k">STEP 05</div><div class="v">Package your $5K offer</div></div>
+      <div class="flow-step"><div class="k">STEP 05</div><div class="v">Scope a service around a real need</div></div>
       <div class="flow-arrow">→</div>
       <div class="flow-step"><div class="k">STEP 06</div><div class="v">Set up a client's domain &amp; DNS</div></div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><div class="k">STEP 07</div><div class="v">Find &amp; audit 50 prospects</div></div>
+      <div class="flow-step"><div class="k">STEP 07</div><div class="v">Research relevant prospects</div></div>
       <div class="flow-arrow">→</div>
       <div class="flow-step"><div class="k">STEP 08</div><div class="v">Send outreach &amp; book calls</div></div>
       <div class="flow-arrow">→</div>
@@ -508,14 +481,14 @@
 <section class="paper section">
   <div class="wrap">
     <div class="kicker">EXACTLY WHAT YOU WALK AWAY WITH</div>
-    <h2 class="section-title">Nothing left as theory. Everything gets built while you follow along.</h2>
+    <h2 class="section-title">A guided path from account setup to testing and client delivery.</h2>
     <ul class="checklist">
       <li>A live email automation account, fully configured</li>
       <li>A connected, authenticated sending domain (SPF, DKIM, DMARC)</li>
       <li>A working lead capture landing page and form</li>
       <li>A tested welcome sequence with a conditional split</li>
       <li>Cart recovery and re-engagement automations</li>
-      <li>A packaged $5,000/month service offer with pricing worksheet</li>
+      <li>A service-scope outline and pricing worksheet</li>
       <li>A 50-business prospect list and audit process</li>
       <li>A cold outreach and proposal framework, including objection handling</li>
       <li>A monthly client reporting dashboard template</li>
@@ -533,7 +506,7 @@
       <div class="split-card yes">
         <h4>✅ This is for you if…</h4>
         <ul>
-          <li>You want a done-for-you, step-by-step path into freelance or agency income</li>
+          <li>You want structured practice with email automation tools and workflows</li>
           <li>You're comfortable clicking around inside a new piece of software</li>
           <li>You'd rather build a real, working system than watch another theory course</li>
           <li>You want a service you can sell on a recurring retainer, not a one-off gig</li>
@@ -548,41 +521,6 @@
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== TESTIMONIAL SUBMISSION ===================== -->
-<section class="paper section tight">
-  <div class="wrap">
-    <div class="kicker">SHARE YOUR EXPERIENCE</div>
-    <h2 class="section-title">Have you used the Blueprint?</h2>
-    <p class="lede">Tell us what you found useful. Feedback is optional, and we will only publish your words and chosen display name if you give permission below.</p>
-    <form class="testimonial-form" id="testimonial-form">
-      <div class="form-grid">
-        <label>
-          Your name
-          <input type="text" name="name" autocomplete="name" maxlength="100" required>
-        </label>
-        <label>
-          Email address (for follow-up only)
-          <input type="email" name="email" autocomplete="email" required>
-        </label>
-      </div>
-      <label style="margin-top:18px;">
-        Name to display with your feedback
-        <input type="text" name="display_name" maxlength="100" required>
-      </label>
-      <label style="margin-top:18px;">
-        Your honest feedback
-        <textarea name="testimonial" maxlength="2000" required></textarea>
-      </label>
-      <label class="permission">
-        <input type="checkbox" name="permission_to_publish" value="yes" required>
-        <span>I confirm this reflects my genuine experience and give Barusology permission to publish this feedback with the display name above. I can request removal by emailing <a href="mailto:barusology@gmail.com">barusology@gmail.com</a>.</span>
-      </label>
-      <button type="submit">Send feedback by email</button>
-      <p class="form-note">Submitting opens your email app with your feedback prepared. Nothing is sent until you choose to send that email. Read our <a href="privacy.html">Privacy Policy</a>. If no email app opens, write to <a href="mailto:barusology@gmail.com">barusology@gmail.com</a>.</p>
-    </form>
   </div>
 </section>
 
@@ -632,24 +570,24 @@
 
     <div class="faq">
       <div class="faq-item">
-        <button class="faq-q">Do I need any technical or marketing experience? <span class="plus">+</span></button>
-        <div class="faq-a"><p>No. The guide assumes you've never built an automation before. Every step is a "do this" instruction with a screenshot-level walkthrough — you're clicking through real screens, not reading theory.</p></div>
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-experience">Do I need any technical or marketing experience? <span class="plus" aria-hidden="true">+</span></button>
+        <div class="faq-a" id="faq-experience" aria-hidden="true"><p>No. The guide assumes you've never built an automation before. Every step is a "do this" instruction with a screenshot-level walkthrough — you're clicking through real screens, not reading theory.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Which email platform do I need? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Any of Mailchimp, Kit, ActiveCampaign, Brevo, Klaviyo, or HubSpot. The guide recommends which one fits your niche best, and every workflow is built using the same trigger-and-delay logic that exists in all of them.</p></div>
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-platform">Which email platform do I need? <span class="plus" aria-hidden="true">+</span></button>
+        <div class="faq-a" id="faq-platform" aria-hidden="true"><p>Any of Mailchimp, Kit, ActiveCampaign, Brevo, Klaviyo, or HubSpot. The guide recommends which one fits your niche best, and every workflow is built using the same trigger-and-delay logic that exists in all of them.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">How long until I could land a paying client? <span class="plus">+</span></button>
-        <div class="faq-a"><p>The guide budgets 5–7 days for building your prospect list, running audits, and sending outreach once your own systems are built — but this depends entirely on your consistency and the niche you choose.</p></div>
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-outcomes">Does the Blueprint guarantee clients or income? <span class="plus" aria-hidden="true">+</span></button>
+        <div class="faq-a" id="faq-outcomes" aria-hidden="true"><p>No. It is an educational product with examples and templates. Finding clients and earning income depend on your skills, offer, market, and implementation; no particular result or timeline is promised.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What format is the guide in? <span class="plus">+</span></button>
-        <div class="faq-a"><p>You get a 32-page PDF plus an editable Word file, so you can adapt the templates, worksheets, and SOPs with your own branding before sending them to clients.</p></div>
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-format">What format is the guide in? <span class="plus" aria-hidden="true">+</span></button>
+        <div class="faq-a" id="faq-format" aria-hidden="true"><p>You get a 32-page PDF plus an editable Word file, so you can adapt the templates, worksheets, and SOPs with your own branding before sending them to clients.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What if it's not for me? <span class="plus">+</span></button>
-        <div class="faq-a"><p>You're covered by a 30-day money-back guarantee. Reach out and we'll refund you, no questions asked.</p></div>
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-refund">What if it's not for me? <span class="plus" aria-hidden="true">+</span></button>
+        <div class="faq-a" id="faq-refund" aria-hidden="true"><p>You're covered by a 30-day money-back guarantee. Reach out and we'll refund you, no questions asked.</p></div>
       </div>
     </div>
   </div>
@@ -659,11 +597,12 @@
 <section class="blueprint final-cta">
   <div class="tickmarks"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
   <div class="wrap">
-    <h2>Your first $5,000/month client is one blueprint away.</h2>
-    <p>Get instant access and start on Project 1 in the next five minutes.</p>
+    <h2>Build your email automation skills with a practical project.</h2>
+    <p>Start with the free guide or explore the full set of guided projects and editable materials.</p>
     <a href="https://www.creem.io/payment/prod_7KMOwGsqSYcldoZPmJBjJ8" class="btn-primary">Get the Blueprint — $30</a>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -671,6 +610,7 @@
     <span>Educational product — results depend on your own effort and market.</span>
     <span>Powered by Barusology INITIATIVE Inc.</span>
     <nav aria-label="Footer">
+      <a href="welcome-email-automation-guide.html">Free implementation guide</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="mailto:barusology@gmail.com">Support: barusology@gmail.com</a>
@@ -679,22 +619,6 @@
 </footer>
 
 <script>
-  document.querySelector('#testimonial-form').addEventListener('submit', event=>{
-    event.preventDefault();
-    const form = event.currentTarget;
-    if(!form.reportValidity()) return;
-    const fields = new FormData(form);
-    const body = [
-      `Name: ${fields.get('name')}`,
-      `Email: ${fields.get('email')}`,
-      `Display name: ${fields.get('display_name')}`,
-      `Feedback: ${fields.get('testimonial')}`,
-      `Permission to publish: ${fields.get('permission_to_publish') === 'yes' ? 'Yes' : 'No'}`
-    ].join('\n\n');
-    const subject = encodeURIComponent('Email Automation Blueprint feedback');
-    window.location.href = `mailto:barusology@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
-  });
-
   document.querySelectorAll('.faq-q').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const item = btn.closest('.faq-item');
@@ -703,10 +627,14 @@
       document.querySelectorAll('.faq-item.open').forEach(o=>{
         o.classList.remove('open');
         o.querySelector('.faq-a').style.maxHeight = null;
+        o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        o.querySelector('.faq-a').setAttribute('aria-hidden', 'true');
       });
       if(!isOpen){
         item.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+        answer.setAttribute('aria-hidden', 'false');
       }
     });
   });

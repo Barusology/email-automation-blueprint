@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical, platform-independent walkthrough for planning, building, testing, and improving a permission-based welcome email automation.">
+  <title>How to Build a Welcome Email Automation | Email Automation Blueprint</title>
+  <link rel="canonical" href="https://emailpro.website/welcome-email-automation-guide.html">
+  <meta name="theme-color" content="#0B2A4A">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5817549134036094" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YG9RNCLN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F5YG9RNCLN');
+  </script>
+  <style>
+    :root{color-scheme:light;--navy:#0B2A4A;--navy-dark:#071B2F;--ink:#16232E;--muted:#495566;--paper:#F3EFE4;--line:#E2DBC8;--cyan:#7FE3EE;--gold:#E8A94A}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 Arial,sans-serif}
+    a{color:#155b78}
+    .site-header{background:var(--navy);color:#fff;padding:16px 24px}
+    .site-header nav{max-width:980px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .site-header a{color:#fff}
+    .brand{font-weight:700;text-decoration:none}
+    .site-header nav div{display:flex;gap:20px;flex-wrap:wrap}
+    main{max-width:980px;margin:0 auto;padding:48px 24px 72px}
+    article{max-width:760px}
+    .eyebrow{color:#7a4b12;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    h1,h2,h3{color:var(--navy);line-height:1.2}
+    h1{font-size:clamp(2.1rem,5vw,3.2rem);margin:.35em 0}
+    h2{font-size:1.65rem;margin:2.2em 0 .55em}
+    h3{font-size:1.18rem;margin:1.6em 0 .4em}
+    .intro{font-size:1.15rem;color:#344758}
+    .updated{font-size:.9rem;color:var(--muted)}
+    .contents,.example,.checklist,.note{padding:20px 24px;border:1px solid var(--line);border-radius:10px;background:#fff}
+    .contents{margin:28px 0}
+    .contents ul{margin:10px 0 0;padding-left:22px}
+    .contents li,.checklist li{margin:6px 0}
+    .example{border-left:4px solid var(--gold);margin:22px 0}
+    .example p:last-child{margin-bottom:0}
+    .checklist{padding-left:42px}
+    .note{background:#eaf4ee;border-color:#cfe6d9}
+    .note p:last-child{margin-bottom:0}
+    .site-footer{background:var(--navy-dark);color:#d7e6e9;padding:28px 24px}
+    .site-footer .inner{max-width:980px;margin:auto;display:flex;gap:12px 24px;justify-content:space-between;flex-wrap:wrap}
+    .site-footer a{color:#fff}
+    @media(max-width:600px){body{font-size:16px}.site-header nav{align-items:flex-start}.site-header nav div{gap:12px}main{padding:34px 20px 56px}.checklist{padding-left:38px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="/">The Email Automation Blueprint</a>
+      <div>
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <p class="eyebrow">Free practical guide</p>
+      <h1>How to build a useful welcome email automation</h1>
+      <p class="intro">A welcome automation is a short sequence of messages sent after someone asks to hear from you. A good one delivers the promised resource, sets expectations, and gives the subscriber a relevant next step—without relying on a person to remember every follow-up.</p>
+      <p class="updated">Published October 9, 2026 · About a 7-minute read</p>
+      <p class="updated">This educational page may display Google AdSense ads. Advertising is separate from the guidance in this article.</p>
+
+      <nav class="contents" aria-label="Guide contents">
+        <strong>In this guide</strong>
+        <ul>
+          <li><a href="#map">Map the subscriber journey</a></li>
+          <li><a href="#sequence">Write a simple three-message sequence</a></li>
+          <li><a href="#build">Build and test the workflow</a></li>
+          <li><a href="#measure">Measure useful outcomes</a></li>
+          <li><a href="#checklist">Pre-launch checklist</a></li>
+        </ul>
+      </nav>
+
+      <p>This walkthrough uses a fictional neighborhood plant shop as an example. The same planning steps can be adapted for a service business, newsletter, or online store. Menu names differ between email platforms, but the underlying workflow is similar.</p>
+
+      <section id="map">
+        <h2>1. Map the subscriber journey before opening your email tool</h2>
+        <p>Write down what the person requested, what they should receive, and what action would be genuinely helpful next. For the example shop, the request might be a watering checklist. The welcome series should deliver that checklist first; a later message can explain how to use it or invite the subscriber to ask a plant-care question.</p>
+        <ol>
+          <li><strong>Choose one entry point.</strong> Name the signup form or resource that starts the workflow, such as “Indoor plant watering checklist.”</li>
+          <li><strong>Record permission clearly.</strong> Use an affirmative signup action, explain what follow-up the person is signing up for, and store the source and time according to your email platform and applicable rules. Do not add purchased, scraped, or unrelated contacts to a marketing sequence.</li>
+          <li><strong>Define the stop conditions.</strong> A person who unsubscribes, hard-bounces, or otherwise becomes ineligible must not keep receiving marketing emails. Use your platform’s suppression and unsubscribe handling.</li>
+        </ol>
+        <div class="note">
+          <p><strong>Permission matters:</strong> Email marketing requirements vary by location and message type. Follow the laws that apply to you, your subscribers, and your platform. This guide is practical education, not legal advice.</p>
+        </div>
+      </section>
+
+      <section id="sequence">
+        <h2>2. Write a simple three-message sequence</h2>
+        <p>Keep each message focused on one job. The timing below is an example, not a universal performance rule; adjust it to the subscriber’s request and the pace of your business.</p>
+        <div class="example">
+          <h3>Message 1 · Immediately after confirmed signup</h3>
+          <p><strong>Purpose:</strong> Deliver the checklist and establish who is writing.</p>
+          <p><strong>Subject example:</strong> “Your plant-watering checklist is here”</p>
+          <p>Thank the subscriber, link to the resource, explain what kind of messages to expect, and include the sender identity and required unsubscribe option. Make the download easy to find without requiring another signup.</p>
+        </div>
+        <div class="example">
+          <h3>Message 2 · After the subscriber has had time to use it</h3>
+          <p><strong>Purpose:</strong> Help the subscriber apply the resource.</p>
+          <p><strong>Subject example:</strong> “A quick way to check soil before watering”</p>
+          <p>Offer one concrete tip that adds to the checklist. Link to a relevant explanation if one exists on your site; do not send a generic sales pitch just because a delay has elapsed.</p>
+        </div>
+        <div class="example">
+          <h3>Message 3 · After another useful interval</h3>
+          <p><strong>Purpose:</strong> Offer an optional next step.</p>
+          <p><strong>Subject example:</strong> “Still working on your indoor plant setup?”</p>
+          <p>Ask a simple question or point to a related service or product, clearly identified as an offer. If the subscriber has already taken that action, use a condition to skip or change the message.</p>
+        </div>
+        <p>Write the emails in plain language. Use a recognizable sender name, a subject that matches the message, descriptive link text, and a reply address that is monitored. Avoid implying a personal relationship or urgency that does not exist.</p>
+      </section>
+
+      <section id="build">
+        <h2>3. Build the workflow and test its branches</h2>
+        <ol>
+          <li>Create or choose a list for people who requested this specific resource. Confirm the signup form sends the right fields and displays an accurate privacy notice.</li>
+          <li>Set the entry trigger to the confirmed signup event. If your process uses double opt-in, start the sequence only after the subscriber confirms.</li>
+          <li>Add Message 1, a delay, Message 2, another delay, and Message 3. Use conditions only when they change the message in a clear, useful way.</li>
+          <li>Exclude unsubscribed and suppressed contacts. Add an exit or goal condition when the subscriber completes the action that makes later messages irrelevant.</li>
+          <li>Preview and send test messages to accounts you control. Check desktop and mobile rendering, links, sender details, merge fields, and the unsubscribe link.</li>
+          <li>Submit a test signup and confirm the actual sequence: trigger, timing, branch, suppression, and exit. A successful preview alone does not prove the automation works end to end.</li>
+        </ol>
+        <p>Keep a small change log: date, what changed, why it changed, and how you tested it. This makes it easier to find the cause if a later edit breaks a link or sends the wrong branch.</p>
+      </section>
+
+      <section id="measure">
+        <h2>4. Measure delivery and subscriber actions</h2>
+        <p>Check delivery failures, hard bounces, unsubscribes, clicks, and the action the sequence was designed to support. Use the same definitions each time you compare reports; email platforms can calculate rates differently. Opens are an imperfect signal because privacy features and image loading can affect them.</p>
+        <p>If you link to a site, use consistent campaign tags or another privacy-appropriate method to distinguish traffic from each message. Compare the sequence with its own previous performance and investigate changes; do not treat a single rate as proof that an email caused a sale.</p>
+        <p>Make one change at a time—for example, clarify the first email’s resource link—then allow enough time and volume to observe the result. If a change increases complaints or unsubscribes, pause and review whether the message matched the subscriber’s expectations.</p>
+      </section>
+
+      <section id="checklist">
+        <h2>Pre-launch checklist</h2>
+        <ul class="checklist">
+          <li>The signup form states what the subscriber is requesting.</li>
+          <li>The first email delivers the promised resource.</li>
+          <li>Only eligible, permissioned subscribers can enter the sequence.</li>
+          <li>Sender identity, reply address, and subject lines are accurate.</li>
+          <li>Every link, delay, condition, and personalization field was tested.</li>
+          <li>Unsubscribe and suppression behavior works as intended.</li>
+          <li>Messages are readable on a phone and do not depend on images.</li>
+          <li>Measurement is consistent and avoids unsupported outcome claims.</li>
+        </ul>
+      </section>
+
+      <p class="note"><strong>Next step:</strong> Use this free walkthrough as a starting point. The <a href="/">Email Automation Blueprint</a> is a separate paid product with additional projects and editable materials; it does not guarantee clients, revenue, or a particular business result.</p>
+
+      <section aria-labelledby="further-reading">
+        <h2 id="further-reading">Sources and further reading</h2>
+        <ul>
+          <li><a href="https://support.google.com/mail/answer/81126?hl=en">Google: Email sender guidelines</a></li>
+          <li><a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/">UK Information Commissioner's Office: Electronic and telephone marketing</a></li>
+          <li><a href="https://support.google.com/adsense/answer/10015918?hl=en">Google AdSense: Content and user experience</a></li>
+        </ul>
+        <p>These resources are maintained by their publishers and may change. Check the current rules for your location and situation.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© 2026 Barusology INITIATIVE Inc.</span>
+      <span><a href="/">Home</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="mailto:barusology@gmail.com">Contact</a></span>
+    </div>
+  </footer>
+</body>
+</html>
