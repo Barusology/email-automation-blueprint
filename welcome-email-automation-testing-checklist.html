@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical QA plan for testing welcome email automations, including opt-in, duplicate entries, delays, unsubscribe handling, links, and recovery tests.">
+  <title>How to Test a Welcome Email Automation | Email Automation Blueprint</title>
+  <link rel="canonical" href="https://emailpro.website/welcome-email-automation-testing-checklist.html">
+  <meta name="theme-color" content="#0B2A4A">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5817549134036094" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YG9RNCLN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F5YG9RNCLN');
+  </script>
+  <style>
+    :root{color-scheme:light;--navy:#0B2A4A;--navy-dark:#071B2F;--ink:#16232E;--muted:#495566;--paper:#F3EFE4;--line:#E2DBC8;--gold:#E8A94A}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 Arial,sans-serif}
+    a{color:#155b78}
+    header,footer{background:var(--navy);color:#fff;padding:16px 24px}
+    header a,footer a{color:#fff}
+    header nav,footer .inner{max-width:980px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}
+    main{max-width:980px;margin:0 auto;padding:44px 24px 68px}
+    article{max-width:780px}
+    h1,h2,h3{color:var(--navy);line-height:1.2}
+    h1{font-size:clamp(2.1rem,5vw,3.1rem);margin:.35em 0}
+    h2{font-size:1.65rem;margin:2em 0 .55em}
+    h3{font-size:1.15rem;margin:1.35em 0 .4em}
+    p,li{max-width:75ch}
+    .eyebrow{color:#7a4b12;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .intro{font-size:1.12rem;color:#344758}
+    .note,.table-wrap{padding:18px 22px;border:1px solid var(--line);border-radius:10px;background:#fff;margin:24px 0}
+    .table-wrap{overflow-x:auto}
+    table{border-collapse:collapse;width:100%;min-width:600px;text-align:left}
+    th,td{border-bottom:1px solid var(--line);padding:12px;vertical-align:top}
+    th{color:var(--navy)}
+    .contents{padding:18px 22px;border:1px solid var(--line);border-radius:10px;background:#fff}
+    .contents li{margin:5px 0}
+    footer{background:var(--navy-dark);font-size:.9rem}
+    @media(max-width:600px){body{font-size:16px}main{padding:32px 20px 52px}.contents,.note,.table-wrap{padding:14px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Main navigation"><a href="/">The Email Automation Blueprint</a><span><a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></nav></header>
+  <main>
+    <article>
+      <p class="eyebrow">Practical testing guide</p>
+      <h1>How to test a welcome email automation before launch</h1>
+      <p class="intro">A workflow that looks correct in an editor can still send the wrong message, enroll someone twice, or ignore an unsubscribe. This checklist turns a welcome sequence into a set of observable tests with a clear expected result.</p>
+      <p>Use a test list and inboxes you control. Menu names differ between email platforms, so the steps below focus on behavior rather than a particular vendor’s interface.</p>
+
+      <nav class="contents" aria-label="Guide contents">
+        <strong>In this guide</strong>
+        <ul>
+          <li><a href="#prepare">Prepare a safe test</a></li>
+          <li><a href="#matrix">Run the test cases</a></li>
+          <li><a href="#diagnose">Diagnose common failures</a></li>
+          <li><a href="#record">Record results and launch deliberately</a></li>
+        </ul>
+      </nav>
+
+      <section id="prepare">
+        <h2>1. Prepare a safe test</h2>
+        <ol>
+          <li>Duplicate the workflow or use the platform’s test mode. Connect it to a test list that cannot accidentally message customers.</li>
+          <li>Write down the expected entry event, message order, delays, branches, exit conditions, and suppression rules before submitting a test.</li>
+          <li>Use inboxes you control for each scenario. Include a fresh address for first-time signup and, if your platform permits, a separate address for duplicate-entry and unsubscribe checks.</li>
+          <li>Use short delays only in the test workflow. Restore the intended production timing before publishing, then verify the saved version.</li>
+          <li>Do not use purchased or scraped addresses, or send test messages to people who did not agree to receive them.</li>
+        </ol>
+        <p class="note"><strong>Safety check:</strong> Confirm the test list, audience, sender, and workflow status before enabling any automation. A test should never be able to send to the production audience by mistake.</p>
+      </section>
+
+      <section id="matrix">
+        <h2>2. Run the test cases</h2>
+        <p>For each case, record the input, expected result, actual result, and any correction. If your platform does not support a case exactly as written, record the closest available test and its limitation.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Test</th><th>Action</th><th>Expected result</th></tr></thead>
+            <tbody>
+              <tr><td>Confirmed signup</td><td>Submit the form with a new test address and complete confirmation if enabled.</td><td>The contact enters once and receives the promised first message with the correct resource.</td></tr>
+              <tr><td>Unconfirmed signup</td><td>When double opt-in is enabled, submit but do not confirm.</td><td>The marketing sequence does not begin before confirmation.</td></tr>
+              <tr><td>Duplicate entry</td><td>Submit the same address again or repeat the platform’s supported entry event.</td><td>The contact is not sent duplicate copies unless that repeat behavior is intentional and clearly configured.</td></tr>
+              <tr><td>Branch condition</td><td>Use test contacts that satisfy each branch condition, one at a time.</td><td>Each contact follows the intended path; no branch silently skips a required message.</td></tr>
+              <tr><td>Unsubscribe</td><td>Unsubscribe a test contact while it is waiting for the next message.</td><td>Further marketing messages stop, and the contact is suppressed according to the platform’s rules.</td></tr>
+              <tr><td>Exit condition</td><td>Complete the goal action, such as requesting the next resource, if the workflow has one.</td><td>Messages made irrelevant by that action are skipped or the contact exits as designed.</td></tr>
+              <tr><td>Delay and time zone</td><td>Observe a shortened test delay, then inspect the configured production delay and time zone.</td><td>The next step occurs in the test window; production timing is restored and matches the intended schedule.</td></tr>
+              <tr><td>Links and personalization</td><td>Open every link and inspect messages with both populated and blank optional fields.</td><td>Links reach the expected destination; missing fields do not create broken text or expose internal tokens.</td></tr>
+              <tr><td>Rendering and sender</td><td>Check the message on a phone and desktop inbox, including sender name and reply address.</td><td>Text is readable, the sender is recognizable, and the reply path is monitored.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Also inspect the actual message headers or platform activity log for delivery, not just the workflow builder’s preview. A preview verifies layout; it does not prove the trigger, timing, suppression, or routing worked.</p>
+      </section>
+
+      <section id="diagnose">
+        <h2>3. Diagnose common failures</h2>
+        <h3>The test contact never entered</h3>
+        <p>Check that the form is connected to the intended audience, the workflow is published or test-enabled, and the entry event matches the form’s actual action. Check for a prior contact record that may prevent a new-entry event.</p>
+        <h3>The contact received two copies</h3>
+        <p>Look for multiple enrollment triggers, repeated form submissions, or a setting that allows re-entry. Decide whether re-entry should be possible, then test both the first entry and the repeat case.</p>
+        <h3>A message arrived at the wrong time</h3>
+        <p>Inspect the delay unit, account time zone, send-window settings, and whether the platform counts from signup or from the previous message. Test with a short delay and confirm production timing separately.</p>
+        <h3>Messages continued after unsubscribe</h3>
+        <p>Check whether every message is part of the same marketing workflow and whether the platform’s unsubscribe and suppression controls cover that audience. Do not launch until a controlled unsubscribe test confirms later marketing messages stop.</p>
+        <h3>A link or personalized field is broken</h3>
+        <p>Open the link from a delivered test message, not only from the editor. Test with blank optional fields and remove or provide a safe fallback for any field that would otherwise render as an empty value or template token.</p>
+      </section>
+
+      <section id="record">
+        <h2>4. Record results and launch deliberately</h2>
+        <p>Keep a compact test log with the date, workflow version, test address label (not a real subscriber’s personal data), scenario, expected result, actual result, and fix. Re-run the affected cases after changing a trigger, condition, delay, email, or suppression rule.</p>
+        <p>Before launch, verify that production recipients are permissioned, the first message delivers what the signup promised, the sender and reply address are accurate, unsubscribe handling works, and the production delay is restored. Monitor delivery failures and unsubscribes after launch; investigate unexpected changes instead of assuming a successful preview means the system is healthy.</p>
+        <p>Open rates can be distorted by privacy features and image loading. Use delivery outcomes, clicks, unsubscribes, and the intended next action as context, and avoid treating a single metric as proof that an email caused a business result.</p>
+      </section>
+
+      <section aria-labelledby="sources">
+        <h2 id="sources">Sources and further reading</h2>
+        <ul>
+          <li><a href="https://support.google.com/mail/answer/81126?hl=en">Google: Email sender guidelines</a></li>
+          <li><a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">U.S. Federal Trade Commission: CAN-SPAM compliance guide</a></li>
+          <li><a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/">UK Information Commissioner's Office: Electronic marketing guidance</a></li>
+        </ul>
+        <p>Rules and platform interfaces can change. Check current requirements for your location and tools. This article is general education, not legal advice.</p>
+      </section>
+      <p class="note">For the planning steps that come before testing, read the <a href="/welcome-email-automation-guide.html">free welcome email automation guide</a>. Learn more about the publisher on the <a href="/about.html">About page</a>.</p>
+    </article>
+  </main>
+  <footer><div class="inner"><span>© 2026 Barusology INITIATIVE Inc.</span><span><a href="/">Home</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="mailto:barusology@gmail.com">Contact</a></span></div></footer>
+</body>
+</html>
