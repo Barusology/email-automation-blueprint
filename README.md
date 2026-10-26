@@ -35,6 +35,7 @@ If the Creem product URL, price, guarantee, or fulfillment terms change, update 
 ├── terms.html                         # Public terms of service
 ├── robots.txt                         # Crawler instructions and sitemap location
 ├── sitemap.xml                        # Public pages for search discovery
+├── vercel.json                         # Permanent redirects from duplicate HTML URL variants
 └── favicon.svg                        # Email icon shown in browser tabs
 ```
 
@@ -69,6 +70,7 @@ Deploy the repository as a static site using any provider that supports a root `
 - Any standard web server or static hosting provider
 
 The site does not require a build step, server runtime, database, or environment variables.
+Vercel redirects `/index.html` to `/` and trailing-slash HTML variants to their canonical `.html` URLs.
 
 The production site domain is [emailpro.website](https://emailpro.website/). The site pages use this domain as their canonical URL.
 
