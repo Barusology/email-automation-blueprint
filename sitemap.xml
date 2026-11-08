@@ -2,37 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://emailpro.website/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>1.0000</priority>
   </url>
   <url>
     <loc>https://emailpro.website/welcome-email-automation-guide.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.8000</priority>
   </url>
   <url>
     <loc>https://emailpro.website/welcome-email-automation-testing-checklist.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.8000</priority>
   </url>
   <url>
     <loc>https://emailpro.website/welcome-email-automation-planner.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://emailpro.website/about.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://emailpro.website/about-us.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.7000</priority>
   </url>
   <url>
-    <loc>https://emailpro.website/privacy.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://emailpro.website/contact.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6000</priority>
+  </url>
+  <url>
+    <loc>https://emailpro.website/privacy-policy.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://emailpro.website/terms.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://emailpro.website/terms-of-service.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.8000</priority>
+  </url>
+  <url>
+    <loc>https://emailpro.website/disclaimer.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6000</priority>
   </url>
 </urlset>

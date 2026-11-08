@@ -31,11 +31,21 @@ If the Creem product URL, price, guarantee, or fulfillment terms change, update 
 .
 ├── index.html                         # Product information and links to free resources
 ├── welcome-email-automation-guide.html # Free educational guide; AdSense Auto ads are loaded here
-├── privacy.html                       # Privacy, analytics, and advertising disclosures
-├── terms.html                         # Public terms of service
+├── welcome-email-automation-planner.html # Free browser-based workflow planner
+├── welcome-email-automation-testing-checklist.html # Free QA and testing checklist
+├── about-us.html                      # Publisher, mission, and editorial standards
+├── contact.html                       # Support channel and response expectations
+├── privacy-policy.html                # Privacy, analytics, and advertising disclosures
+├── terms-of-service.html              # Public terms of service
+├── disclaimer.html                    # Earnings and educational disclaimer
+├── about.html                         # Redirect stub to about-us.html
+├── privacy.html                       # Redirect stub to privacy-policy.html
+├── terms.html                         # Redirect stub to terms-of-service.html
+├── assets/site-docs.css               # Shared design system for the five policy pages
+├── assets/site-docs.js                # Shared scroll, reveal, and clipboard behavior
 ├── robots.txt                         # Crawler instructions and sitemap location
 ├── sitemap.xml                        # Public pages for search discovery
-├── vercel.json                         # Permanent redirects from duplicate HTML URL variants
+├── vercel.json                        # Permanent redirects from duplicate and legacy HTML URLs
 └── favicon.svg                        # Email icon shown in browser tabs
 ```
 
